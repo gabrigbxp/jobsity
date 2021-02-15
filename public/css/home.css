@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* Chat */
+
+.chat-container {
+    width: 500px;
+    margin: 0 auto;
+    height: 320px;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.chat {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    position: relative;
+    width: 90%;
+}
+
+.chat::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.response {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.chat p {
+    float: left;
+    margin: 0;
+}
+
+.response p {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+    text-align: right;
+}
+
+
+/* Formulario */
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.form-container #command {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+}
+
+.form-container #command:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}

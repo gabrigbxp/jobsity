@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chatbot Jobsity{% endblock %}
+
+{% block stylesheets %}
+    {#{{ encore_entry_link_tags('app') }}#}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="chat-container">
+    
+</div>
+<form action="/action_page.php" class="form-container">
+    <label for="command"><b>Send command</b></label>
+    <input placeholder="Type message.." name="command" id="command" required>
+    <input type="hidden" name="_csrf_token" id="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    <button type="submit" class="btn">Send</button>
+</form>
+
+Powered by <a href="https://www.amdoren.com" target="_blank">Amdoren</a>
+{% endblock %}

@@ -13,7 +13,7 @@
 2. Execute `composer install` 
 3. Set connection string in `.env` file
 4. Prepare database with `php bin/console doctrine:migrations:migrate`
-5. Execute the server with `composer start` 
+5. Execute the server with `composer start` , it will run on http://127.0.0.1:8000/
 
 ## Bot commands
 

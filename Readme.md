@@ -12,8 +12,8 @@
 1. Clone the repository
 2. Execute `composer install` 
 3. Set connection string in `.env` file
-4. Once is installed, execute the server with `composer start` 
-5. Prepare database with `php bin/console doctrine:migrations:migrate`
+4. Prepare database with `php bin/console doctrine:migrations:migrate`
+5. Execute the server with `composer start` 
 
 ## Bot commands
 

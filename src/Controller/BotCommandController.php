@@ -101,13 +101,13 @@ class BotCommandController extends AbstractController
     private function processAsDeposit($command): ?string
     {
         $output = null;
-        $count_match = preg_match("/deposit\s?([\d.]+)\s?([\w]{3})/i", $command, $matches);
+        $count_match = preg_match("/^deposit\s?([\d.]+)\s?([\w]{3})/i", $command, $matches);
 
         if ($count_match) {
             $amount = $matches[1];
             $symbol = strtoupper($matches[2]);
         } else {
-            $count_match = preg_match("/deposit\s?([\w]{3})\s?([\d.]+)/i", $command, $matches);
+            $count_match = preg_match("/^deposit\s?([\w]{3})\s?([\d.]+)/i", $command, $matches);
 
             if ($count_match) {
                 $amount = $matches[2];
@@ -173,9 +173,9 @@ class BotCommandController extends AbstractController
 
     private function processAsBalance($command): ?string
     {
-        if (!$this->getUser()) return "User is not logged in";
-
         if (preg_match("/^\s*balance\s*\$/i", $command)) {
+            if (!$this->getUser()) return "User is not logged in";
+
             $amount = $this->getUser()->getMoney();
             $symbol = $this->getUser()->getSymbol();
             return "Your current balance is: $symbol $amount";
